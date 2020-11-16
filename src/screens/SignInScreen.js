@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Linking } from 'react-native';
-import { loginUser } from "../lib/firestore";
-import { colors, Button } from '../ui';
+import { colors } from '../ui';
 
-import { onlyGetUser } from '../lib/firestore';
+import LoginAccount from '../components/LoginAccount'
+import CreateAccount from '../components/CreateAccount'
 
 const SignScreen = () => {
+  const [LoginOrCreateAccount, setLoginOrCreateAccount] = useState(0)
+
   return (
     <View
       style={{
@@ -24,47 +26,11 @@ const SignScreen = () => {
       >
         Mastereloading
       </Text>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center'
-        }}
-      >
-      </View>
-      <View>
-        <Text
-          style={{
-            textAlign: 'center',
-            color: colors.secondary,
-            fontWeight: 'bold',
-            fontSize: 15
-          }}
-        >
-          Login
-        </Text>
-      </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          backgroundColor: colors.primary,
-          justifyContent: 'center'
-        }}
-      >
-        <Button
-          style={{
-            margin: 3
-          }}
-          title='Login Google'
-          onPress={() => loginUser()}
-        />
-        <Button
-          style={{
-            margin: 3
-          }}
-          title='aaa'
-          onPress={() => console.log(onlyGetUser)}
-        />
-      </View>
+      {
+        LoginOrCreateAccount === 0
+          ? <LoginAccount setLoginOrCreateAccount={setLoginOrCreateAccount} />
+          : <CreateAccount setLoginOrCreateAccount={setLoginOrCreateAccount} />
+      }
       <Text
         style={{
           position: 'absolute',

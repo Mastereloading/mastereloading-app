@@ -17,7 +17,7 @@ const Navigation = () => {
   }, [])
 
   return (
-    isAuth
+    !isAuth
     ?
     <NavigationContainer>
         <StatusBar backgroundColor={colors.primary} />
