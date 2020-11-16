@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { colors } from '../ui'
+import { colors } from '../ui';
 
 import SignInStackNavigator from './SignInStackNavigator';
 import AuthDrawerNavigator from './AuthDrawerNavigator';

@@ -11,6 +11,9 @@ const AuthDrawerNavigator = () => {
   return (
     <Drawer.Navigator
       initialRouteName="Home"
+      // screenOptions={{
+      //   headerShown: false
+      // }}
       drawerType='front'
       screenOptions={{
         headerStyle: {
@@ -28,7 +31,7 @@ const AuthDrawerNavigator = () => {
         component={HomeStackNavigator}
         options={{
           drawerLabel: 'Tela Principal',
-          // drawerIcon: Icons.Logo
+          // drawerIcon: Icons.Chat
         }}
       />
       <Drawer.Screen
