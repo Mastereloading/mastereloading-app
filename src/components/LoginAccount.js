@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View } from 'react-native'
 
+import { loginUser } from '../lib/firestore'
 import { colors, TextInput, Button } from '../ui'
 
 const LoginAccount = ({ setLoginOrCreateAccount }) => {
@@ -45,7 +46,7 @@ const LoginAccount = ({ setLoginOrCreateAccount }) => {
             margin: 2
           }}
           title='Login'
-          onPress={() => console.log('Logar Conta Aqui...')}
+          onPress={() => loginUser(loginData.email, loginData.password)}
         />
         <Button
           style={{
@@ -60,7 +61,7 @@ const LoginAccount = ({ setLoginOrCreateAccount }) => {
           margin: 2
         }}
         title='Login Google'
-        onPress={() => console.log('Logar Conta Google Aqui...')}
+        onPress={() => "200"} // {onGoogleButtonPress}
       />
     </View>
   )

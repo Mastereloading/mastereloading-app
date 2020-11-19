@@ -1,32 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { colors } from '../ui';
-
 import SignInStackNavigator from './SignInStackNavigator';
 import AuthDrawerNavigator from './AuthDrawerNavigator';
+import { colors } from '../ui';
 import { onUserChanged } from '../lib/firestore';
 
 const Navigation = () => {
-  const [isAuth, setIsAuth] = useState(null)
-
-  useEffect(() => {
+  const [isAuth, setIsAuth] = useState(
     onUserChanged((user) => {
       setIsAuth(user)
     })
-  }, [])
+  )
 
   return (
-    !isAuth
-    ?
     <NavigationContainer>
-        <StatusBar backgroundColor={colors.primary} />
-        <SignInStackNavigator />
-    </NavigationContainer>
-    :
-    <NavigationContainer>
-        <StatusBar backgroundColor={colors.primary} />
-        <AuthDrawerNavigator />
+      <StatusBar backgroundColor={colors.primary} />
+      {
+        !isAuth
+          ? <SignInStackNavigator />
+          : <AuthDrawerNavigator />
+      }
     </NavigationContainer>
   )
 }

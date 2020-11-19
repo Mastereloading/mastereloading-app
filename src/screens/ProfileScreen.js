@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text, SafeAreaView, ScrollView } from 'react-native'
 
-// import { getUser, logoutUser } from '../lib/firestore'
+import { getUser, logoutUser } from '../lib/firestore'
 
 import { colors, Button, UserAvatar } from '../ui'
 
 const ProfileScreen = ({ navigation }) => {
-  const [account, setAccount] = useState('')
+  const userData = getUser()
 
   return (
     <SafeAreaView
@@ -24,7 +24,7 @@ const ProfileScreen = ({ navigation }) => {
             flexDirection: 'row',
             alignItems: 'center',
             margin: 15
-            
+
           }}
         >
           <UserAvatar source={require('../assets/adalovelace.jpg')} />
@@ -43,7 +43,7 @@ const ProfileScreen = ({ navigation }) => {
                 textAlign: 'center'
               }}
             >
-              {account === '' ? '...' : account.accountData.displayName}
+              {userData.email}
             </Text>
             <Text
               style={{
@@ -62,6 +62,15 @@ const ProfileScreen = ({ navigation }) => {
           Malesuada proin libero nunc consequat interdum varius sit amet mattis. Mauris in aliquam sem fringilla ut morbi. Arcu odio ut sem nulla pharetra diam. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Convallis posuere morbi leo urna molestie at elementum eu facilisis. Senectus et netus et malesuada fames ac. Quam viverra orci sagittis eu. Nulla facilisi nullam vehicula ipsum. At erat pellentesque adipiscing commodo elit at imperdiet. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Pellentesque habitant morbi tristique senectus et netus. Tempor orci dapibus ultrices in iaculis nunc.
           At tellus at urna condimentum mattis pellentesque id nibh. Semper auctor neque vitae tempus quam pellentesque. At auctor urna nunc id cursus metus. Eget duis at tellus at urna condimentum mattis pellentesque. Adipiscing elit pellentesque habitant morbi tristique senectus et. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Non sodales neque sodales ut. Tempor nec feugiat nisl pretium fusce id velit. In nisl nisi scelerisque eu ultrices. Enim tortor at auctor urna nunc id cursus. Sit amet purus gravida quis blandit turpis. Cursus in hac habitasse platea dictumst quisque sagittis purus.
         </Text>
+        <Button
+          title='Logout'
+          style={{
+            padding: 30,
+            backgroundColor: '#F00',
+            color: colors.secondary
+          }}
+          onPress={() => logoutUser()}
+        />
       </ScrollView>
       <Button
         title='Chat'

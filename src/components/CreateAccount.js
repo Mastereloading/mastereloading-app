@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { View } from 'react-native'
+import { createUser } from '../lib/firestore'
 
 import { colors, TextInput, Button } from '../ui'
 
@@ -59,11 +60,13 @@ const CreateAccount = ({ setLoginOrCreateAccount }) => {
         }}
       >
         <Button
+          disabled={loginData.password === loginData.confirmPassword && loginData.password != '' ? false : true}
           style={{
-            margin: 2
+            margin: 2,
+            backgroundColor: loginData.password === loginData.confirmPassword && loginData.password != '' ? colors.secondary : colors.primaryTranslucent
           }}
           title='Criar'
-          onPress={() => console.log('Criar Conta Aqui...')}
+          onPress={() => createUser(loginData.name, loginData.email, loginData.password)}
         />
         <Button
           style={{
