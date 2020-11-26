@@ -27,22 +27,37 @@ const ReactInputScreen = (props) => {
           onChangeText={value => setTextData(value)}
           placeholder='Escreva algo aqui...'
         />
-        <Button
-          title='Alterar'
-          style={{
-            color: colors.primary,
-            width: 80
-          }}
-          onPress={() => {
-            props.setText(textData)
-            setTextData('')
+        <View>
+          <Button
+            title='Alterar'
+            style={{
+              color: colors.primary,
+              width: 80
+            }}
+            onPress={() => {
+              props.setText(textData)
+              setTextData('')
 
-            return '200'
-          }}
-        />
+              return '200'
+            }}
+          />
+          <Button
+            title='Mensagem Padrão'
+            style={{
+              color: colors.primary,
+              width: 80
+            }}
+            onPress={() => {
+              props.defaultText()
+
+              return '200'
+            }}
+          />
+        </View>
       </View>
       <Text
         style={{
+          textAlign: 'center',
           textDecorationLine: 'underline',
           fontWeight: 'bold',
           fontSize: 35,
