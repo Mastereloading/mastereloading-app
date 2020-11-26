@@ -5,7 +5,6 @@ import { loginUser } from '../lib/firestore'
 import { colors, TextInput, Button } from '../ui'
 
 const LoginAccount = ({ setLoginOrCreateAccount }) => {
-  console.log(setLoginOrCreateAccount)
   const [loginData, setLoginData] = useState({
     email: '',
     password: ''
@@ -42,10 +41,13 @@ const LoginAccount = ({ setLoginOrCreateAccount }) => {
         }}
       >
         <Button
+          disabled={loginData.email != '' && loginData.password != '' ? false : true}
           style={{
-            margin: 2
+            margin: 2,
+            backgroundColor: loginData.email != '' && loginData.password != '' ? colors.secondary : colors.primaryTranslucent
           }}
           title='Login'
+          
           onPress={() => loginUser(loginData.email, loginData.password)}
         />
         <Button

@@ -33,7 +33,7 @@ export const createUser = async (name, email, password) => {
     return "200"
   }
   else {
-    console.log('nao cria conta')
+    alert('Houve um erro durante a execução...')
 
     return "200"
   }
@@ -47,12 +47,11 @@ export const loginUser = async (email, password) => {
 
 export const logoutUser = async () => {
   try {
-    await auth().signOut();accountGoogle
-    alert(err);
+    await auth().signOut();
 
     return "200";
-  } catch (error) {
-    console.log(error)
+  } catch (err) {
+    alert(err)
 
     return "200"
   }

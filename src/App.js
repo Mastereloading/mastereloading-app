@@ -7,19 +7,19 @@
  */
 
 import React from 'react'
+import { Provider } from 'react-redux'
 import { StatusBar } from 'react-native'
+
 import Navigation from './navigation/Navigation'
+import store from './store'
 import { colors } from './ui'
 
 const App = () => {
   return (
-    <>
-      <StatusBar
-        backgroundColor={colors.tertiary}
-        style='auto'
-      />
+    <Provider store={store}>
+      <StatusBar backgroundColor={colors.tertiary} style='auto' />
       <Navigation />
-    </>
+    </Provider>
   )
 }
 

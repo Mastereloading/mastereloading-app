@@ -17,6 +17,6 @@
 
 //     await auth().signInWithCredential(credential)
 //   } catch (e) {
-//     console.log({e})
+//     alert({e})
 //   }
 // }, [])

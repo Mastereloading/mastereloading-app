@@ -3,6 +3,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import HomeStackNavigator from './HomeStackNavigator';
 import ProfileStackNavigator from './ProfileStackNavigator';
+import ReduxStackNavigator from './ReduxStackNavigator';
+
 import { colors } from '../ui';
 
 const AuthDrawerNavigator = () => {
@@ -39,6 +41,14 @@ const AuthDrawerNavigator = () => {
         component={ProfileStackNavigator}
         options={{
           drawerLabel: 'Usuário',
+          // drawerIcon: Icons.Chat
+        }}
+      />
+      <Drawer.Screen
+        name='Redux'
+        component={ReduxStackNavigator}
+        options={{
+          drawerLabel: 'Testes Redux',
           // drawerIcon: Icons.Chat
         }}
       />
