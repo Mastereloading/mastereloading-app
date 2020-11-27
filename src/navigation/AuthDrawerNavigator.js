@@ -1,21 +1,23 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import DrawerContentComponent from '../components/drawer/DrawerContentComponent';
 import HomeStackNavigator from './HomeStackNavigator';
 import ProfileStackNavigator from './ProfileStackNavigator';
 import ReduxStackNavigator from './ReduxStackNavigator';
 
-import { colors } from '../ui';
+import { colors, Icons } from '../ui';
 
 const AuthDrawerNavigator = () => {
   const Drawer = createDrawerNavigator()
 
   return (
     <Drawer.Navigator
-      initialRouteName="Home"
+      // initialRouteName="Home"
       // screenOptions={{
       //   headerShown: false
       // }}
+      drawerContent={props => <DrawerContentComponent props={props} />}
       drawerType='front'
       screenOptions={{
         headerStyle: {
@@ -33,7 +35,7 @@ const AuthDrawerNavigator = () => {
         component={HomeStackNavigator}
         options={{
           drawerLabel: 'Tela Principal',
-          // drawerIcon: Icons.Chat
+          drawerIcon: () => <Icons.Store />
         }}
       />
       <Drawer.Screen
@@ -41,7 +43,7 @@ const AuthDrawerNavigator = () => {
         component={ProfileStackNavigator}
         options={{
           drawerLabel: 'Usuário',
-          // drawerIcon: Icons.Chat
+          drawerIcon: () => <Icons.User />
         }}
       />
       <Drawer.Screen
@@ -49,7 +51,7 @@ const AuthDrawerNavigator = () => {
         component={ReduxStackNavigator}
         options={{
           drawerLabel: 'Testes Redux',
-          // drawerIcon: Icons.Chat
+          drawerIcon: () => <Icons.Info />
         }}
       />
     </Drawer.Navigator>

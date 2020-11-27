@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { colors } from '../ui'
 
 import HomeScreen from '../screens/HomeScreen';
+import { colors } from '../ui'
 
 const HomeStackNavigator = () => {
   const Stack = createStackNavigator()

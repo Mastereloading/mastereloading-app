@@ -3,10 +3,10 @@ import { View, Text } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import * as textChangeActions from '../store/actions/textChangeActions'
+import * as changeTextActions from '../store/actions/changeTextActions'
 import { Button, colors, TextInput } from '../ui'
 
-const ReactInputScreen = (props) => {
+const ReduxInputScreen = (props) => {
   const [textData, setTextData] = useState('')
   return (
     <View
@@ -71,11 +71,11 @@ const ReactInputScreen = (props) => {
 }
 
 const mapStateToProps = state => ({
-  text: state.textChangeReducer.text
+  text: state.changeTextReducer.text
 })
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators(textChangeActions, dispatch)
+  return bindActionCreators(changeTextActions, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReactInputScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxInputScreen)

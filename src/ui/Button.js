@@ -3,7 +3,7 @@ import { TouchableOpacity, Text } from 'react-native'
 
 import { colors } from './index'
 
-const Button = ({ title, color, style, ...props }) => {
+const Button = ({ title, color, fontSize, style, ...props }) => {
   return (
     <TouchableOpacity
       style={{
@@ -21,6 +21,7 @@ const Button = ({ title, color, style, ...props }) => {
         style={{
           fontWeight: 'bold',
           textAlign: 'center',
+          fontSize: fontSize,
           color: style.color || colors.primary,
         }}
       >

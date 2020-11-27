@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import textChangeReducer from './textChangeReducer';
+import changeTextReducer from './changeTextReducer';
+import changeNumberReducer from './changeNumberReducer';
 
 export default combineReducers({
-  textChangeReducer
+  changeTextReducer,
+  changeNumberReducer
 });
