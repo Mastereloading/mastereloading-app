@@ -1,16 +1,11 @@
 import React from 'react'
-import { View } from 'react-native'
-import { colors, Button } from '../ui'
+import { colors, Box, Button } from '../ui'
 
 const ReactListScreen = ({ navigation }) => {
   return (
-    <View
-      style={{
-        flex: 1
-      }}
-    >
+    <Box flex flexDirection='column'>
       <Button
-        title='ReactCounter - Teste 1'
+        title='React Counter - Teste 1'
         style={{
           padding: 10,
           borderWidth: 2,
@@ -21,7 +16,7 @@ const ReactListScreen = ({ navigation }) => {
         onPress={() => navigation.navigate('ReduxCounter')}
       />
       <Button
-        title='ReactInput - Teste 2'
+        title='React Input - Teste 2'
         style={{
           padding: 10,
           borderWidth: 2,
@@ -42,7 +37,7 @@ const ReactListScreen = ({ navigation }) => {
         }}
         onPress={() => alert('Teste 3 aqui...')}
       />
-    </View>
+    </Box>
   )
 }
 

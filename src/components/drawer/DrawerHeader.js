@@ -1,34 +1,22 @@
 import React from 'react'
-import { View, Text } from 'react-native'
 
-import { UserAvatar } from '../../ui'
+import { colors, Box, Text, UserAvatar } from '../../ui'
 
 const DrawerHeader = () => {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        margin: 10
-      }}
-    >
-      <View
-        style={{
-          margin: 10
-        }}
-      >
+    <Box style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', margin: 10 }}>
+      <Box style={{ margin: 10 }}>
         <UserAvatar source={require('../../assets/adalovelace.jpg')} />
-      </View>
-      <View
-        style={{
-          flex: 1
-        }}
-      >
-        <Text>OI</Text>
-        <Text>tiweifhsdafhsdfjkl</Text>
-      </View>
-    </View>
+      </Box>
+      <Box flex style={{ alignItems: 'center' }}>
+        <Text>
+          Guilherme
+        </Text>
+        <Text style={{ color: colors.primary , fontSize: 10 }}>
+          guilherme-lamon@hotmail.com
+        </Text>
+      </Box>
+    </Box>
   )
 }
 

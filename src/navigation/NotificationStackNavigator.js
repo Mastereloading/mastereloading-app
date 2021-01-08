@@ -1,18 +1,19 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { colors } from '../ui';
 
 import BackOrMenuButton from '../components/drawer/BackOrMenuButton';
 
-import ProfileScreen from '../screens/ProfileScreen';
-import ProfileSettingsScreen from '../screens/ProfileSettingsScreen';
+import NotificationLinkScreen from '../screens/NotificationLinkScreen';
+import NotificationSpecificScreen from '../screens/NotificationSpecificScreen';
 
-const ProfileStackNavigator = ({ navigation }) => {
+import { colors } from '../ui'
+
+const ReduxStackNavigator = ({ navigation }) => {
   const Stack = createStackNavigator()
 
   return (
     <Stack.Navigator
-      initialRouteName='Profile'
+      initialRouteName='NotificationLink'
       screenOptions={{
         headerStyle: {
           backgroundColor: colors.primary,
@@ -25,23 +26,23 @@ const ProfileStackNavigator = ({ navigation }) => {
       }}
     >
       <Stack.Screen
-        name='Profile'
-        component={ProfileScreen}
+        name='NotificationLink'
+        component={NotificationLinkScreen}
         options={{
-          title: 'Profile',
+          title: 'Tela com Link',
           headerLeft: () => <BackOrMenuButton navigation={navigation} />
         }}
       />
       <Stack.Screen
-        name='ProfileSettings'
-        component={ProfileSettingsScreen}
+        name='NotificationSpecific'
+        component={NotificationSpecificScreen}
         options={{
-          title: 'ProfileOptions',
-          headerLeft: () => <BackOrMenuButton navigation={navigation} backButton='Profile' />
+          title: 'Tela Específica',
+          headerLeft: () => <BackOrMenuButton navigation={navigation} backButton='NotificationLink' />
         }}
       />
     </Stack.Navigator>
   )
 }
 
-export default ProfileStackNavigator
+export default ReduxStackNavigator

@@ -1,7 +1,7 @@
 import React from 'react'
-import { TouchableOpacity, Text } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 
-import { colors } from './index'
+import { Text, colors } from './index'
 
 const Button = ({ title, color, fontSize, style, ...props }) => {
   return (

@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { View } from 'react-native'
 
+import { colors, Box, TextInput, Button } from '../ui'
 import { loginUser } from '../lib/firestore'
-import { colors, TextInput, Button } from '../ui'
 
 const LoginAccount = ({ setLoginOrCreateAccount }) => {
   const [loginData, setLoginData] = useState({
@@ -11,13 +10,7 @@ const LoginAccount = ({ setLoginOrCreateAccount }) => {
   })
 
   return (
-    <View
-      style={{
-        backgroundColor: colors.primary,
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-    >
+    <Box background={colors.primary} style={{ alignItems: 'center', justifyContent: 'center' }}>
       <TextInput
         value={loginData.email}
         onChangeText={value => setLoginData({
@@ -35,11 +28,7 @@ const LoginAccount = ({ setLoginOrCreateAccount }) => {
         placeholder='Senha...'
         secureTextEntry={true}
       />
-      <View
-        style={{
-          flexDirection: 'row'
-        }}
-      >
+      <Box style={{ flexDirection: 'row' }}>
         <Button
           disabled={loginData.email != '' && loginData.password != '' ? false : true}
           style={{
@@ -57,7 +46,7 @@ const LoginAccount = ({ setLoginOrCreateAccount }) => {
           title='Criar Conta'
           onPress={() => setLoginOrCreateAccount(1)}
         />
-      </View>
+      </Box>
       <Button
         style={{
           margin: 2
@@ -65,7 +54,7 @@ const LoginAccount = ({ setLoginOrCreateAccount }) => {
         title='Login Google'
         onPress={() => "200"} // {onGoogleButtonPress}
       />
-    </View>
+    </Box>
   )
 }
 

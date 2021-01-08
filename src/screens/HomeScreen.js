@@ -1,18 +1,10 @@
 import React from 'react'
-import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
-import { Icons, colors } from '../ui'
+import { colors, Box, Text, Button, Icons } from '../ui'
 
 const HomeScreen = (props) => {
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: colors.white,
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-    >
+    <Box flex background style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
       <Icons.Store />
       <Icons.User />
       <Icons.Menu />
@@ -20,7 +12,17 @@ const HomeScreen = (props) => {
       <Text>
         {props.welcomeMessage}
       </Text>
-    </View>
+      <Button
+        title='Pop-Up'
+        style={{
+          padding: 30,
+          borderColor: colors.tertiary,
+          backgroundColor: colors.primary,
+          color: colors.secondary
+        }}
+        onPress={() => console.log('Pop-Up')}
+      />
+    </Box>
   )
 }
 

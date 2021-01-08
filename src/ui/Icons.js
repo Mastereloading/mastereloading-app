@@ -65,25 +65,25 @@ const Error = ({ style, background, ...props }) => {
   );
 };
 
+export const Back = ({ style, background, ...props }) => {
+  return (
+    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
+      <Path
+        d="M19.4 10.45H8l3.9-3.9c.5-.5.5-1.5 0-2.1-.6-.6-1.5-.6-2.1 0l-6.4 6.3c-.3.3-.4.7-.4 1.1 0 .3.1.6.2.8 0 .1.1.1.1.2 0 0 0 .1.1.1l6.3 6.3c.6.6 1.5.6 2.1 0 .6-.6.6-1.5 0-2.1l-3.6-3.7h11.2c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5z"
+        fill={(style && style.color) || textColor}
+      />
+    </Svg>
+  );
+};
+
 export default {
   Store,
   User,
   Menu,
   Info,
-  Error
+  Error,
+  Back
 }
-
-// export const Back = ({ style, background, ...props }) => {
-//   const textColor = useTextColor(background);
-//   return (
-//     <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
-//       <Path
-//         d="M19.4 10.45H8l3.9-3.9c.5-.5.5-1.5 0-2.1-.6-.6-1.5-.6-2.1 0l-6.4 6.3c-.3.3-.4.7-.4 1.1 0 .3.1.6.2.8 0 .1.1.1.1.2 0 0 0 .1.1.1l6.3 6.3c.6.6 1.5.6 2.1 0 .6-.6.6-1.5 0-2.1l-3.6-3.7h11.2c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5z"
-//         fill={(style && style.color) || textColor}
-//       />
-//     </Svg>
-//   );
-// };
 
 // export const Down = ({ style, background, ...props }) => {
 //   const textColor = useTextColor(background);

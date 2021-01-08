@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { View } from 'react-native'
-import { createUser } from '../lib/firestore'
 
-import { colors, TextInput, Button } from '../ui'
+import { colors, Box, TextInput, Button } from '../ui'
+import { createUser } from '../lib/firestore'
 
 const CreateAccount = ({ setLoginOrCreateAccount }) => {
   const [loginData, setLoginData] = useState({
@@ -13,13 +12,7 @@ const CreateAccount = ({ setLoginOrCreateAccount }) => {
   })
 
   return (
-    <View
-      style={{
-        backgroundColor: colors.primary,
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-    >
+    <Box background={colors.primary} style={{ alignItems: 'center', justifyContent: 'center' }}>
       <TextInput
         value={loginData.name}
         onChangeText={value => setLoginData({
@@ -54,11 +47,7 @@ const CreateAccount = ({ setLoginOrCreateAccount }) => {
         placeholder='Confirme a Senha...'
         secureTextEntry={true}
       />
-      <View
-        style={{
-          flexDirection: 'row'
-        }}
-      >
+      <Box style={{ flexDirection: 'row' }}>
         <Button
           disabled={loginData.password === loginData.confirmPassword && loginData.password != '' ? false : true}
           style={{
@@ -75,8 +64,8 @@ const CreateAccount = ({ setLoginOrCreateAccount }) => {
           title='Voltar'
           onPress={() => setLoginOrCreateAccount(0)}
         />
-      </View>
-    </View>
+      </Box>
+    </Box>
   )
 }
 

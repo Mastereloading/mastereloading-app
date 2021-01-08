@@ -1,11 +1,14 @@
 import React from 'react'
 import { View, Text, SafeAreaView, ScrollView } from 'react-native'
+import { Box } from '../ui'
 
 import { getUser } from '../lib/firestore'
 import { colors, Button, UserAvatar } from '../ui'
 
 const ProfileScreen = ({ navigation }) => {
   const userData = getUser()
+
+  console.log(userData.uid)
 
   return (
     <SafeAreaView
@@ -17,7 +20,7 @@ const ProfileScreen = ({ navigation }) => {
       }}
     >
       <ScrollView>
-        <View
+        <Box flex
           style={{
             margin: 10
           }}
@@ -63,7 +66,7 @@ const ProfileScreen = ({ navigation }) => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis purus sit amet volutpat consequat mauris. Id donec ultrices tincidunt arcu non sodales. Volutpat ac tincidunt vitae semper. Tellus pellentesque eu tincidunt tortor. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. In vitae turpis massa sed elementum tempus egestas. Massa placerat duis ultricies lacus sed. Id velit ut tortor pretium viverra suspendisse potenti nullam ac. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis purus sit amet volutpat consequat mauris. Id donec ultrices tincidunt arcu non sodales. Volutpat ac tincidunt vitae semper. Tellus pellentesque eu tincidunt tortor. Pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio. In vitae turpis massa sed elementum tempus egestas. Massa placerat duis ultricies lacus sed. Id velit ut tortor pretium viverra suspendisse potenti nullam ac. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant.
           </Text>
-        </View>
+        </Box>
       </ScrollView>
       <Button
         title='Chat'

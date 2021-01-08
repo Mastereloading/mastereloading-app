@@ -1,21 +1,22 @@
 import React from 'react'
-import { View, ImageBackground } from 'react-native'
+import { Alert, ImageBackground } from 'react-native'
 
-import { colors } from './index'
+import { colors, Box } from './index'
 
 const UserAvatar = ({ ...props }) => {
   return (
     <ImageBackground
       style={{
-        width: 120,
-        height: 100
+        width: 95,
+        height: 75
       }}
-      { ...props }
+      {...props}
     >
-      <View
+      <Box
+        onPress={() => Alert.alert('Ada Lovelace')}
         style={{
-          width: 120,
-          height: 100,
+          width: 95,
+          height: 75,
           borderWidth: 3,
           borderTopLeftRadius: 15,
           borderTopRightRadius: 50,

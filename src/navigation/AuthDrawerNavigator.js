@@ -2,33 +2,35 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import DrawerContentComponent from '../components/drawer/DrawerContentComponent';
+
 import HomeStackNavigator from './HomeStackNavigator';
 import ProfileStackNavigator from './ProfileStackNavigator';
 import ReduxStackNavigator from './ReduxStackNavigator';
+import NotificationStackNavigator from './NotificationStackNavigator';
 
-import { colors, Icons } from '../ui';
+import { Icons } from '../ui';
 
 const AuthDrawerNavigator = () => {
   const Drawer = createDrawerNavigator()
 
   return (
     <Drawer.Navigator
-      // initialRouteName="Home"
-      // screenOptions={{
-      //   headerShown: false
-      // }}
-      drawerContent={props => <DrawerContentComponent props={props} />}
-      drawerType='front'
+      initialRouteName="Home"
       screenOptions={{
-        headerStyle: {
-          backgroundColor: colors.primary,
-        },
-        headerTitleStyle: {
-          color: colors.white,
-          fontWeight: 'bold'
-        },
-        headerTitleAlign: 'center'
+        headerShown: false
       }}
+      drawerContent={props => <DrawerContentComponent props={props} />}
+    // drawerType='front'
+    // screenOptions={{
+    //   headerStyle: {
+    //     backgroundColor: colors.primary,
+    //   },
+    //   headerTitleStyle: {
+    //     color: colors.white,
+    //     fontWeight: 'bold'
+    //   },
+    //   headerTitleAlign: 'center'
+    // }}
     >
       <Drawer.Screen
         name='Home'
@@ -51,6 +53,14 @@ const AuthDrawerNavigator = () => {
         component={ReduxStackNavigator}
         options={{
           drawerLabel: 'Testes Redux',
+          drawerIcon: () => <Icons.Info />
+        }}
+      />
+      <Drawer.Screen
+        name='Notification'
+        component={NotificationStackNavigator}
+        options={{
+          drawerLabel: 'Notificação',
           drawerIcon: () => <Icons.Info />
         }}
       />

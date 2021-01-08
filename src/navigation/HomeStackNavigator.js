@@ -1,12 +1,13 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import BackOrMenuButton from '../components/drawer/BackOrMenuButton';
+
 import HomeScreen from '../screens/HomeScreen';
 import { colors } from '../ui'
 
-const HomeStackNavigator = () => {
+const HomeStackNavigator = ({ navigation }) => {
   const Stack = createStackNavigator()
-
   return (
     <Stack.Navigator
       screenOptions={{
@@ -24,7 +25,8 @@ const HomeStackNavigator = () => {
         name='Home'
         component={HomeScreen}
         options={{
-          title: 'Tela Principal'
+          title: 'Tela Principal',
+          headerLeft: () => <BackOrMenuButton navigation={navigation} />
         }}
       />
     </Stack.Navigator>

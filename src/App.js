@@ -6,18 +6,26 @@
  * @flow strict-local
  */
 
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Alert } from 'react-native'
 import { Provider } from 'react-redux'
-import { StatusBar } from 'react-native'
+import messaging from '@react-native-firebase/messaging'
 
 import Navigation from './navigation/Navigation'
 import store from './store'
-import { colors } from './ui'
 
 const App = () => {
+  useEffect(() => {
+    const unsubscribe = messaging().onMessage(remoteMessage => {
+      console.log(remoteMessage)
+      Alert.alert(JSON.stringify(remoteMessage.notification.title), JSON.stringify(remoteMessage.notification.body))
+    })
+
+    return unsubscribe
+  }, [])
+
   return (
     <Provider store={store}>
-      <StatusBar backgroundColor={colors.tertiary} style='auto' />
       <Navigation />
     </Provider>
   )

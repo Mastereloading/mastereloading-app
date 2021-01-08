@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, Linking } from 'react-native';
-import { colors } from '../ui';
+import { Linking } from 'react-native';
+import { Box, Text, colors } from '../ui';
 
 import LoginAccount from '../components/LoginAccount'
 import CreateAccount from '../components/CreateAccount'
@@ -9,21 +9,8 @@ const SignScreen = () => {
   const [LoginOrCreateAccount, setLoginOrCreateAccount] = useState(0)
 
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: colors.primary
-      }}
-    >
-      <Text
-        style={{
-          color: colors.secondary,
-          fontWeight: 'bold',
-          fontSize: 30
-        }}
-      >
+    <Box flex background={colors.primary} style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={{ color: colors.secondary, fontSize: 30 }}>
         Mastereloading
       </Text>
       {
@@ -32,19 +19,18 @@ const SignScreen = () => {
           : <CreateAccount setLoginOrCreateAccount={setLoginOrCreateAccount} />
       }
       <Text
+        onPress={() => Linking.openURL('https://github.com/Mastereloading')}
         style={{
           position: 'absolute',
           color: colors.tertiary,
-          fontWeight: 'bold',
           textDecorationLine: 'underline',
           fontSize: 18,
-          bottom: '4%',
+          bottom: '4%'
         }}
-        onPress={() => Linking.openURL('https://github.com/Mastereloading')}
       >
         Guilherme Oliveira
       </Text>
-    </View>
+    </Box>
   )
 }
 
