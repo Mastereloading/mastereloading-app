@@ -13,6 +13,8 @@ const Navigation = () => {
     })
   )
 
+  console.log(isAuth)
+
   return (
     <NavigationContainer>
       <StatusBar backgroundColor={colors.primary} />

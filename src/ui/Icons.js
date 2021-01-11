@@ -1,88 +1,27 @@
 import React from "react"
-import Svg, { Path } from "react-native-svg"
+import Ionicons from 'react-native-vector-icons/Ionicons'
 import { colors } from "./index"
 
-const textColor = colors.primary
-
 const defaultStyle = {
-  height: 30,
-  width: 30,
-  margin: 2
+  margin: 20
 }
 
-const Store = ({ style, background, ...props }) => {
-  return (
-    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
-      <Path
-        d="M18.0652 4H5.93478C5.34783 4 4.8587 4.48077 4.8587 5.05769C4.8587 5.63462 5.34783 6.11538 5.93478 6.11538H18.0652C18.6522 6.11538 19.1413 5.63462 19.1413 5.05769C19.1413 4.48077 18.6522 4 18.0652 4ZM21 13.7115L19.4348 8.51923C19.2391 7.94231 18.75 7.55769 18.0652 7.55769H5.93478C5.34783 7.55769 4.76087 7.94231 4.56522 8.51923L3 13.7115H4.8587V17.8462C4.8587 18.4231 5.34783 19 6.03261 19H12.6848C13.2717 19 13.8587 18.5192 13.8587 17.8462V13.7115H16.5V17.9423C16.5 18.5192 16.9891 19 17.5761 19H18.2609C18.8478 19 19.337 18.5192 19.337 17.9423V13.7115H21V13.7115ZM12.2935 17.1731H6.71739V13.5192H12.2935V17.1731Z"
-        fill={(style && style.color) || textColor}
-      />
-    </Svg>
-  )
-}
-
-const User = ({ style, background, ...props }) => {
-  return (
-    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
-      <Path
-        d="M11.8 11.8c2.2 0 3.9-1.8 3.9-3.9C15.7 5.8 14 4 11.8 4S7.9 5.8 7.9 7.9c0 2.2 1.7 3.9 3.9 3.9zM20.6 16.9c0-2-5.8-3.1-8.8-3.1-3 0-8.8 1.1-8.8 3.1v2.8c0 .3.4.5.8.5h16c.4 0 .8-.2.8-.5v-2.8z"
-        fill={(style && style.color) || textColor}
-      />
-    </Svg>
-  )
-}
-
-const Menu = ({ style, background, ...props }) => {
-  return (
-    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
-      <Path
-        d="M6.2 8.5h12.6c.7 0 1.2-.5 1.2-1.2S19.5 6 18.8 6H6.2C5.5 6 5 6.5 5 7.2s.5 1.3 1.2 1.3zM18.8 11.4H6.2c-.7 0-1.2.6-1.2 1.3 0 .7.5 1.2 1.2 1.2h12.6c.7 0 1.2-.5 1.2-1.2s-.5-1.3-1.2-1.3zM18.8 16.9H6.2c-.7 0-1.2.5-1.2 1.2s.5 1.2 1.2 1.2h12.6c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2z"
-        fill={(style && style.color) || textColor}
-      />
-    </Svg>
-  )
-}
-
-const Info = ({ style, background, ...props }) => {
-  return (
-    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
-      <Path
-        d="M4 12C4 16.3944 7.60563 20 12 20C13.3521 20 14.7042 19.662 15.831 18.9859C18.3099 17.6338 20 14.9296 20 11.8873C20 7.60563 16.3944 4 12 4C10.6479 4 9.29577 4.33803 8.16901 5.01408C5.69014 6.3662 4 8.95775 4 12ZM12.9014 16.0563C12.9014 16.507 12.4507 16.9577 12 16.9577C11.5493 16.9577 11.0986 16.507 11.0986 16.0563V11.2113C11.0986 10.7606 11.5493 10.3099 12 10.3099C12.4507 10.3099 12.9014 10.7606 12.9014 11.2113V16.0563ZM12 7.26761C12.6761 7.26761 13.1268 7.83099 13.1268 8.39437C13.1268 8.95775 12.5634 9.52113 12 9.52113C11.4366 9.52113 10.8732 8.95775 10.8732 8.39437C10.8732 7.83099 11.3239 7.26761 12 7.26761Z"
-        fill={(style && style.color) || textColor}
-      />
-    </Svg>
-  );
-}
-
-const Error = ({ style, background, ...props }) => {
-  return (
-    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
-      <Path
-        d="M19.571 17.95l-5.523-5.8 5.333-5.6a1.5 1.5 0 000-2.1c-.572-.6-1.429-.6-2 0l-5.333 5.7-5.334-5.7c-.571-.6-1.428-.6-2 0-.285.3-.476.7-.476 1.1 0 .4.095.8.381 1.1l5.333 5.6-5.523 5.8a1.5 1.5 0 000 2.1c.285.3.666.4 1.047.4.381 0 .762-.1 1.048-.4l5.524-5.8 5.523 5.8c.572.6 1.429.6 2 0 .572-.6.572-1.6 0-2.2z"
-        fill={(style && style.color) || textColor}
-      />
-    </Svg>
-  );
-};
-
-export const Back = ({ style, background, ...props }) => {
-  return (
-    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
-      <Path
-        d="M19.4 10.45H8l3.9-3.9c.5-.5.5-1.5 0-2.1-.6-.6-1.5-.6-2.1 0l-6.4 6.3c-.3.3-.4.7-.4 1.1 0 .3.1.6.2.8 0 .1.1.1.1.2 0 0 0 .1.1.1l6.3 6.3c.6.6 1.5.6 2.1 0 .6-.6.6-1.5 0-2.1l-3.6-3.7h11.2c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5z"
-        fill={(style && style.color) || textColor}
-      />
-    </Svg>
-  );
-};
+const Menu = ({ size, color, style, ...props }) => <Ionicons name="menu" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
+const Back = ({ size, color, style, ...props }) => <Ionicons name="arrow-back" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
+const Store = ({ size, color, style, ...props }) => <Ionicons name="home" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
+const User = ({ size, color, style, ...props }) => <Ionicons name="person" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
+const Info = ({ size, color, style, ...props }) => <Ionicons name="information-circle" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
+const Notification = ({ size, color, style, ...props }) => <Ionicons name="notifications" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
+const Exit = ({ size, color, style, ...props }) => <Ionicons name="exit" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
 
 export default {
+  Menu,
+  Back,
   Store,
   User,
-  Menu,
   Info,
-  Error,
-  Back
+  Notification,
+  Exit
 }
 
 // export const Down = ({ style, background, ...props }) => {

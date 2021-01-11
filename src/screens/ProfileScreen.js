@@ -69,12 +69,12 @@ const ProfileScreen = ({ navigation }) => {
         </Box>
       </ScrollView>
       <Button
-        title='Chat'
+        title='Profile Options'
         style={{
           position: 'absolute',
           padding: 30,
           top: '82%',
-          left: '68%',
+          left: '50%',
           borderRadius: 38,
           borderColor: colors.tertiary,
           backgroundColor: colors.primary,

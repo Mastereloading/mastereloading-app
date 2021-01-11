@@ -1,6 +1,6 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
-import { colors, Icons } from '../../ui'
+import { Icons } from '../../ui'
 
 const BackOrMenuButton = ({ navigation, backButton }) => {
   return !backButton
@@ -8,14 +8,14 @@ const BackOrMenuButton = ({ navigation, backButton }) => {
       <TouchableOpacity
         onPress={navigation.openDrawer}
       >
-        <Icons.Menu style={{ color: colors.white, margin: 20 }} />
+        <Icons.Menu />
       </TouchableOpacity>
     )
     : (
       <TouchableOpacity
         onPress={() => navigation.navigate(backButton)}
       >
-        <Icons.Back style={{ color: colors.white, margin: 20 }} />
+        <Icons.Back />
       </TouchableOpacity>
     )
 }

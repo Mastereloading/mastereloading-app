@@ -5,10 +5,7 @@ import { colors, Box, Text, Button, Icons } from '../ui'
 const HomeScreen = (props) => {
   return (
     <Box flex background style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-      <Icons.Store />
-      <Icons.User />
       <Icons.Menu />
-      <Icons.Info />
       <Text>
         {props.welcomeMessage}
       </Text>

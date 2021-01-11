@@ -8,7 +8,7 @@ import ProfileStackNavigator from './ProfileStackNavigator';
 import ReduxStackNavigator from './ReduxStackNavigator';
 import NotificationStackNavigator from './NotificationStackNavigator';
 
-import { Icons } from '../ui';
+import { colors, Icons } from '../ui';
 
 const AuthDrawerNavigator = () => {
   const Drawer = createDrawerNavigator()
@@ -37,7 +37,7 @@ const AuthDrawerNavigator = () => {
         component={HomeStackNavigator}
         options={{
           drawerLabel: 'Tela Principal',
-          drawerIcon: () => <Icons.Store />
+          drawerIcon: () => <Icons.Store color={colors.primary} style={{ margin: 0, marginLeft: 15 }} />
         }}
       />
       <Drawer.Screen
@@ -45,7 +45,7 @@ const AuthDrawerNavigator = () => {
         component={ProfileStackNavigator}
         options={{
           drawerLabel: 'Usuário',
-          drawerIcon: () => <Icons.User />
+          drawerIcon: () => <Icons.User color={colors.primary} style={{ margin: 0, marginLeft: 15 }} />
         }}
       />
       <Drawer.Screen
@@ -53,7 +53,7 @@ const AuthDrawerNavigator = () => {
         component={ReduxStackNavigator}
         options={{
           drawerLabel: 'Testes Redux',
-          drawerIcon: () => <Icons.Info />
+          drawerIcon: () => <Icons.Info color={colors.primary} style={{ margin: 0, marginLeft: 15 }} />
         }}
       />
       <Drawer.Screen
@@ -61,7 +61,7 @@ const AuthDrawerNavigator = () => {
         component={NotificationStackNavigator}
         options={{
           drawerLabel: 'Notificação',
-          drawerIcon: () => <Icons.Info />
+          drawerIcon: () => <Icons.Notification color={colors.primary} style={{ margin: 0, marginLeft: 15 }} />
         }}
       />
     </Drawer.Navigator>

@@ -58,7 +58,7 @@ export const logoutUser = async () => {
 };
 
 export const onUserChanged = (callback) => {
-  const userChange = auth().onAuthStateChanged(callback);
+  const userChange = auth().onAuthStateChanged(callback)
 
-  return userChange;
+  return userChange
 };

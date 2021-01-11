@@ -37,7 +37,7 @@ const DrawerContentComponent = ({ props }) => {
         style={{
           backgroundColor: colors.back
         }}
-        icon={() => <Icons.Error />}
+        icon={() => <Icons.Exit color={colors.primary} style={{ margin: 0, marginLeft: 20 }} />}
       />
     </DrawerContentScrollView>
   )

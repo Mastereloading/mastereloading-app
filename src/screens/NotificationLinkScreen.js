@@ -11,26 +11,33 @@ const NotificationLinkScreen = () => {
       return setToken(token)
     })
 
-    return messaging().onTokenRefresh(token => {
-      setToken(token)
+    messaging().onTokenRefresh(token => {
+      return setToken(token)
     })
   }, [])
 
   return (
     <Box flex background style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-      <Text>
-        Link para emitir notificação...
-      </Text>
-      <Text
-        onPress={() => Linking.openURL('https://github.com/Mastereloading')}
+      <Box
         style={{
-          color: colors.tertiary,
-          textDecorationLine: 'underline',
-          fontSize: 22
+          alignItems: 'center',
+          paddingBottom: 15
         }}
       >
-        notification.com.br
-      </Text>
+        <Text>
+          Link para emitir notificação...
+        </Text>
+        <Text
+          onPress={() => Linking.openURL('https://us-central1-mastereloading-database.cloudfunctions.net/mastereloadingSendNotification')}
+          style={{
+            color: colors.tertiary,
+            textDecorationLine: 'underline',
+            fontSize: 22
+          }}
+        >
+          notification.com.br
+        </Text>
+      </Box>
       <Button
         title='Token do Dispositivo'
         style={{
