@@ -1,8 +1,8 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import DrawerContentComponent from '../components/drawer/DrawerContentComponent';
-
 import HomeStackNavigator from './HomeStackNavigator';
 import ProfileStackNavigator from './ProfileStackNavigator';
 import ReduxStackNavigator from './ReduxStackNavigator';
@@ -20,17 +20,6 @@ const AuthDrawerNavigator = () => {
         headerShown: false
       }}
       drawerContent={props => <DrawerContentComponent props={props} />}
-    // drawerType='front'
-    // screenOptions={{
-    //   headerStyle: {
-    //     backgroundColor: colors.primary,
-    //   },
-    //   headerTitleStyle: {
-    //     color: colors.white,
-    //     fontWeight: 'bold'
-    //   },
-    //   headerTitleAlign: 'center'
-    // }}
     >
       <Drawer.Screen
         name='Home'

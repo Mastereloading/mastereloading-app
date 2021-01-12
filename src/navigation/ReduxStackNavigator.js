@@ -1,11 +1,9 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-
-import BackOrMenuButton from '../components/drawer/BackOrMenuButton';
-
-import ReduxListScreen from '../screens/ReduxListScreen';
-import ReduxCounterScreen from '../screens/ReduxCounterScreen';
-import ReduxInputScreen from '../screens/ReduxInputScreen';
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import BackOrMenuButton from '../components/drawer/BackOrMenuButton'
+import ReduxListScreen from '../screens/ReduxListScreen'
+import ReduxCounterScreen from '../screens/ReduxCounterScreen'
+import ReduxInputScreen from '../screens/ReduxInputScreen'
 import { colors } from '../ui'
 
 const ReduxStackNavigator = ({ navigation }) => {

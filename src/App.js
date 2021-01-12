@@ -17,11 +17,23 @@ import store from './store'
 const App = () => {
   useEffect(() => {
     const unsubscribe = messaging().onMessage(remoteMessage => {
-      console.log(remoteMessage)
-      Alert.alert(JSON.stringify(remoteMessage.notification.title), JSON.stringify(remoteMessage.notification.body))
+      Alert.alert(
+        JSON.stringify(remoteMessage.notification.title),
+        JSON.stringify(remoteMessage.notification.body)
+      )
     })
 
     return unsubscribe
+  }, [])
+
+  useEffect(() => {
+    messaging().onNotificationOpenedApp(remoteMessage => {
+      console.log('   Abriu o App em background.   ')
+    })
+
+    messaging().getInitialNotification().then(remoteMessage => {
+      console.log('   Abriu o App fechado.   ')
+    })
   }, [])
 
   return (

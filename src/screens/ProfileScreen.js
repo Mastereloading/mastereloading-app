@@ -8,8 +8,6 @@ import { colors, Button, UserAvatar } from '../ui'
 const ProfileScreen = ({ navigation }) => {
   const userData = getUser()
 
-  console.log(userData.uid)
-
   return (
     <SafeAreaView
       style={{

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { StatusBar } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import SignInStackNavigator from './SignInStackNavigator';
-import AuthDrawerNavigator from './AuthDrawerNavigator';
-import { colors } from '../ui';
-import { onUserChanged } from '../lib/firestore';
+import React, { useState } from 'react'
+import { StatusBar } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import SignInStackNavigator from './SignInStackNavigator'
+import AuthDrawerNavigator from './AuthDrawerNavigator'
+import { onUserChanged } from '../lib/firestore'
+import { colors } from '../ui'
 
 const Navigation = () => {
   const [isAuth, setIsAuth] = useState(
@@ -12,8 +12,6 @@ const Navigation = () => {
       setIsAuth(user)
     })
   )
-
-  console.log(isAuth)
 
   return (
     <NavigationContainer>

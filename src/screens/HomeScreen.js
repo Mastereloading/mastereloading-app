@@ -1,24 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { colors, Box, Text, Button, Icons } from '../ui'
+import { colors, Box, Text } from '../ui'
 
 const HomeScreen = (props) => {
   return (
     <Box flex background style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
-      <Icons.Menu />
-      <Text>
+      <Text
+        style={{
+          textAlign: 'center'
+        }}
+      >
         {props.welcomeMessage}
       </Text>
-      <Button
-        title='Pop-Up'
+      <Text
         style={{
-          padding: 30,
-          borderColor: colors.tertiary,
-          backgroundColor: colors.primary,
-          color: colors.secondary
+          color: colors.primary,
+          fontSize: 12,
+          textAlign: 'center'
         }}
-        onPress={() => console.log('Pop-Up')}
-      />
+      >
+        (Altere o texto acima editando o exercício "Redux - React Input")
+      </Text>
     </Box>
   )
 }
