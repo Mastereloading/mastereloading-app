@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { StatusBar } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { Alert } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
+import messaging from '@react-native-firebase/messaging'
 import SignInStackNavigator from './SignInStackNavigator'
 import AuthDrawerNavigator from './AuthDrawerNavigator'
 import { onUserChanged } from '../lib/firestore'
-import { colors } from '../ui'
 
 const Navigation = () => {
   const [isAuth, setIsAuth] = useState(
@@ -13,13 +13,33 @@ const Navigation = () => {
     })
   )
 
+  useEffect(() => {
+    const unsubscribe = messaging().onMessage(remoteMessage => {
+      Alert.alert(
+        JSON.stringify(remoteMessage.notification.title),
+        JSON.stringify(remoteMessage.notification.body)
+      )
+    })
+
+    return unsubscribe
+  }, [])
+
+  useEffect(() => {
+    messaging().onNotificationOpenedApp(remoteMessage => {
+      navigation.navigate(remoteMessage.data.screen)
+    })
+
+    messaging().getInitialNotification().then(remoteMessage => {
+      navigation.navigate(remoteMessage.data.screen)
+    })
+  }, [])
+
   return (
     <NavigationContainer>
-      <StatusBar backgroundColor={colors.primary} />
       {
         !isAuth
-          ? <SignInStackNavigator />
-          : <AuthDrawerNavigator />
+        ? <SignInStackNavigator />
+        : <AuthDrawerNavigator />
       }
     </NavigationContainer>
   )
