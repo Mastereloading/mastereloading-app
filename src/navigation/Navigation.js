@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createRef } from 'react'
 import { Alert } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import messaging from '@react-native-firebase/messaging'
@@ -7,6 +7,7 @@ import AuthDrawerNavigator from './AuthDrawerNavigator'
 import { onUserChanged } from '../lib/firestore'
 
 const Navigation = () => {
+  const navigationRef = createRef()
   const [isAuth, setIsAuth] = useState(
     onUserChanged((user) => {
       setIsAuth(user)
@@ -16,8 +17,8 @@ const Navigation = () => {
   useEffect(() => {
     const unsubscribe = messaging().onMessage(remoteMessage => {
       Alert.alert(
-        JSON.stringify(remoteMessage.notification.title),
-        JSON.stringify(remoteMessage.notification.body)
+        JSON.stringify(remoteMessage?.notification?.title),
+        JSON.stringify(remoteMessage?.notification?.body)
       )
     })
 
@@ -26,16 +27,20 @@ const Navigation = () => {
 
   useEffect(() => {
     messaging().onNotificationOpenedApp(remoteMessage => {
-      navigation.navigate(remoteMessage.data.screen)
+      console.log('Abriu o app do background...')
+      console.log(JSON.stringify(remoteMessage?.notification?.title))
+      // navigationRef.current?.navigate("NotificationSpecific")
     })
 
     messaging().getInitialNotification().then(remoteMessage => {
-      navigation.navigate(remoteMessage.data.screen)
+      console.log('Abriu o app que estava fechado...')
+      console.log(JSON.stringify(remoteMessage?.notification?.title))
+      // navigationRef.current?.navigate('NotificationSpecific')
     })
   }, [])
 
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       {
         !isAuth
         ? <SignInStackNavigator />

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Linking } from 'react-native';
-import { Box, Text, colors } from '../ui';
+import React, { useState } from 'react'
+import { Image, Linking } from 'react-native'
+import { Box, Text, colors } from '../ui'
 
 import LoginAccount from '../components/LoginAccount'
 import CreateAccount from '../components/CreateAccount'
@@ -10,7 +10,22 @@ const SignScreen = () => {
 
   return (
     <Box flex background={colors.primary} style={{ alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ color: colors.secondary, fontSize: 30 }}>
+      <Image
+        source={require('../assets/mastereloading.png')}
+        style={{
+          borderWidth: 2,
+          borderColor: colors.tertiary,
+          width: 120,
+          height: 120
+        }}
+      />
+      <Text
+        style={{
+          color: colors.secondary,
+          fontSize: 30,
+          padding: 10
+        }}
+      >
         Mastereloading
       </Text>
       {
@@ -21,11 +36,10 @@ const SignScreen = () => {
       <Text
         onPress={() => Linking.openURL('https://github.com/Mastereloading')}
         style={{
-          position: 'absolute',
           color: colors.tertiary,
           textDecorationLine: 'underline',
           fontSize: 18,
-          bottom: '4%'
+          top: '3%'
         }}
       >
         Guilherme Oliveira

@@ -1,14 +1,12 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-
-import BackOrMenuButton from '../components/drawer/BackOrMenuButton';
-
-import NotificationLinkScreen from '../screens/NotificationLinkScreen';
-import NotificationSpecificScreen from '../screens/NotificationSpecificScreen';
-
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import BackOrMenuButton from '../components/drawer/BackOrMenuButton'
+import NotificationLinkScreen from '../screens/NotificationLinkScreen'
+import NotificationSpecificScreen from '../screens/NotificationSpecificScreen'
 import { colors } from '../ui'
 
-const ReduxStackNavigator = ({ navigation }) => {
+
+const NotificationStackNavigator = ({ navigation }) => {
   const Stack = createStackNavigator()
 
   return (
@@ -45,4 +43,4 @@ const ReduxStackNavigator = ({ navigation }) => {
   )
 }
 
-export default ReduxStackNavigator
+export default NotificationStackNavigator

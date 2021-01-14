@@ -1,13 +1,11 @@
-import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-
-import DrawerContentComponent from '../components/drawer/DrawerContentComponent';
-import HomeStackNavigator from './HomeStackNavigator';
-import ProfileStackNavigator from './ProfileStackNavigator';
-import ReduxStackNavigator from './ReduxStackNavigator';
-import NotificationStackNavigator from './NotificationStackNavigator';
-
-import { colors, Icons } from '../ui';
+import React from 'react'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import DrawerContentComponent from '../components/drawer/DrawerContentComponent'
+import HomeStackNavigator from './HomeStackNavigator'
+import ProfileStackNavigator from './ProfileStackNavigator'
+import ReduxStackNavigator from './ReduxStackNavigator'
+import NotificationStackNavigator from './NotificationStackNavigator'
+import { colors, Icons } from '../ui'
 
 const AuthDrawerNavigator = () => {
   const Drawer = createDrawerNavigator()
