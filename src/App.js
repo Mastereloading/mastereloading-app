@@ -9,11 +9,16 @@
 import React from 'react'
 import { StatusBar } from 'react-native'
 import { Provider } from 'react-redux'
+import messaging from '@react-native-firebase/messaging'
 import Navigation from './navigation/Navigation'
 import store from './store'
 import { colors } from './ui'
 
 const App = () => {
+  messaging().setBackgroundMessageHandler(async remoteMessage => {
+    console.log('Message handled in the background!', remoteMessage)
+  })
+
   return (
     <Provider store={store}>
       <StatusBar backgroundColor={colors.primary} />
