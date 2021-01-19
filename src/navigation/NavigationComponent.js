@@ -6,7 +6,7 @@ import SignInStackNavigator from './SignInStackNavigator'
 import AuthDrawerNavigator from './AuthDrawerNavigator'
 import { navigate } from './RootNavigation'
 
-const Component = () => {
+const NavigationComponent = () => {
   const [isAuth, setIsAuth] = useState(
     onUserChanged((user) => {
       setIsAuth(user)
@@ -49,4 +49,4 @@ const Component = () => {
   return !isAuth ? <SignInStackNavigator /> : <AuthDrawerNavigator />
 }
 
-export default Component
+export default NavigationComponent

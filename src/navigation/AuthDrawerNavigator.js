@@ -5,6 +5,7 @@ import HomeStackNavigator from './HomeStackNavigator'
 import ProfileStackNavigator from './ProfileStackNavigator'
 import ReduxStackNavigator from './ReduxStackNavigator'
 import NotificationStackNavigator from './NotificationStackNavigator'
+import AnimationStackNavigator from './AnimationStackNavigator'
 import { colors, Icons } from '../ui'
 
 const AuthDrawerNavigator = () => {
@@ -48,6 +49,14 @@ const AuthDrawerNavigator = () => {
         options={{
           drawerLabel: 'Notificação',
           drawerIcon: () => <Icons.Notification color={colors.primary} style={{ margin: 0, marginLeft: 15 }} />
+        }}
+      />
+      <Drawer.Screen
+        name='Animation'
+        component={AnimationStackNavigator}
+        options={{
+          drawerLabel: 'Animações',
+          drawerIcon: () => <Icons.Animation color={colors.primary} style={{ margin: 0, marginLeft: 15 }} />
         }}
       />
     </Drawer.Navigator>
