@@ -19,15 +19,12 @@ export const createUser = async (name, email, password) => {
     const result = await auth().createUserWithEmailAndPassword(email, password).catch((error) => alert(error))
     const accountData = result.user
     const accountRef = accounts.doc(accountData.uid);
-    await accountRef.set(
-      {
-        displayName: name,
-        email: email,
-        phoneNumber: accountData.phoneNumber,
-        photoURL: accountData.photoURL,
-      },
-      { merge: true }
-    )
+    await accountRef.set({
+      displayName: name,
+      email: email,
+      phoneNumber: accountData.phoneNumber,
+      photoURL: accountData.photoURL,
+    }, { merge: true })
     await auth().signInWithEmailAndPassword(email, password).catch((error) => alert(error))
 
     return "200"
@@ -57,8 +54,4 @@ export const logoutUser = async () => {
   }
 };
 
-export const onUserChanged = (callback) => {
-  const userChange = auth().onAuthStateChanged(callback)
-
-  return userChange
-};
+export const onUserChanged = (callback) => auth().onAuthStateChanged(callback)

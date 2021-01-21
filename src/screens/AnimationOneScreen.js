@@ -1,7 +1,14 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useRef } from 'react'
+import { View, Text, Animated } from 'react-native'
 
 const AnimationOneScreen = () => {
+  const width = useRef(new Animated.Value(50)).current
+
+  Animated.timing(width, {
+    toValue: 250,
+    duration: 2000
+  }).start()
+
   return (
     <View
       style={{
@@ -11,8 +18,16 @@ const AnimationOneScreen = () => {
       }}
     >
       <Text>
-        teste
+        Teste
       </Text>
+      <Animated.View
+        style={{
+          width: width,
+          height: 50,
+          backgroundColor: '#FF0000'
+        }}
+      >
+      </Animated.View>
     </View>
   )
 }

@@ -16,7 +16,7 @@ import { colors } from './ui'
 
 const App = () => {
   messaging().setBackgroundMessageHandler(async remoteMessage => {
-    console.log('Message handled in the background!', remoteMessage)
+    console.log('New push notification!', remoteMessage)
   })
 
   return (

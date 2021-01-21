@@ -24,27 +24,19 @@ const NavigationComponent = () => {
     return unsubscribe
   }, [])
 
-  useEffect(() => {
-    messaging().onNotificationOpenedApp(remoteMessage => {
-      console.log('Abriu o app do background...')
-      console.log(remoteMessage)
-      console.log(remoteMessage != null)
-      if (remoteMessage !== null) {
-        console.log('entrou')
-        navigate('Notification', { screen: 'NotificationSpecific', data: remoteMessage })
-      }
-    })
+  messaging().onNotificationOpenedApp(remoteMessage => {
+    console.log(JSON.stringify(remoteMessage))
+    if (remoteMessage !== null) {
+      navigate('Notification', { screen: 'NotificationSpecific', data: remoteMessage })
+    }
+  })
 
-    messaging().getInitialNotification().then(remoteMessage => {
-      console.log('Abriu o app que estava fechado...')
-      console.log(remoteMessage)
-      console.log(remoteMessage != null)
-      if (remoteMessage !== null) {
-        console.log('entrou')
-        navigate('Notification', { screen: 'NotificationSpecific', data: remoteMessage })
-      }
-    })
-  }, [])
+  messaging().getInitialNotification().then(remoteMessage => {
+    console.log(JSON.stringify(remoteMessage))
+    if (remoteMessage !== null) {
+      navigate('Notification', { screen: 'NotificationSpecific', data: remoteMessage })
+    }
+  })
 
   return !isAuth ? <SignInStackNavigator /> : <AuthDrawerNavigator />
 }
