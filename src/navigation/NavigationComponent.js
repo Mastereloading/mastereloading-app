@@ -7,11 +7,11 @@ import AuthDrawerNavigator from './AuthDrawerNavigator'
 import { navigate } from './RootNavigation'
 
 const NavigationComponent = () => {
-  const [isAuth, setIsAuth] = useState(
-    onUserChanged((user) => {
-      setIsAuth(user)
-    })
-  )
+  const [isAuth, setIsAuth] = useState({})
+
+  onUserChanged((user) => {
+    setIsAuth(user)
+  })
 
   useEffect(() => {
     const unsubscribe = messaging().onMessage(remoteMessage => {

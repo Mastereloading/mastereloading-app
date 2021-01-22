@@ -1,34 +1,67 @@
 import React, { useRef } from 'react'
-import { View, Text, Animated } from 'react-native'
+import { Animated } from 'react-native'
+
+import { Box, Text, Button } from '../ui'
 
 const AnimationOneScreen = () => {
   const width = useRef(new Animated.Value(50)).current
 
-  Animated.timing(width, {
-    toValue: 250,
-    duration: 2000
-  }).start()
+  const openView = () => {
+    return Animated.timing(width, {
+      toValue: 250,
+      duration: 2000,
+      useNativeDriver: false
+    }).start()
+  }
+
+  const closeView = () => {
+    return Animated.timing(width, {
+      toValue: 50,
+      duration: 2000,
+      useNativeDriver: false
+    }).start()
+  }
 
   return (
-    <View
+    <Box flex
       style={{
-        flex: 1,
         margin: 25,
         alignItems: 'center'
       }}
     >
-      <Text>
-        Teste
-      </Text>
+      <Text>Teste</Text>
       <Animated.View
         style={{
           width: width,
           height: 50,
-          backgroundColor: '#FF0000'
+          borderWidth: 2,
+          backgroundColor: '#FF0000',
+          alignItems: 'center'
         }}
       >
+        <Text>View</Text>
       </Animated.View>
-    </View>
+      <Box flex style={{ flexDirection: 'row'}}>
+        <Button
+          title='Open'
+          fontSize={20}
+          style={{
+            width: 80,
+            height: 80
+          }}
+          onPress={() => openView()}
+        />
+        <Button
+          title='Close'
+          fontSize={20}
+          style={{
+            width: 80,
+            height: 80
+          }}
+          onPress={() => closeView()}
+        />
+      </Box>
+    </Box>
   )
 }
 
