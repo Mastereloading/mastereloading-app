@@ -3,6 +3,8 @@ import { Animated } from 'react-native'
 
 import { Box, Text, Button } from '../ui'
 
+// https://pt-br.reactjs.org/docs/refs-and-the-dom.html
+
 const AnimationOneScreen = () => {
   const width = useRef(new Animated.Value(50)).current
 

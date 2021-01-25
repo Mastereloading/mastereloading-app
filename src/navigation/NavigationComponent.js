@@ -25,14 +25,12 @@ const NavigationComponent = () => {
   }, [])
 
   messaging().onNotificationOpenedApp(remoteMessage => {
-    console.log(JSON.stringify(remoteMessage))
     if (remoteMessage !== null) {
       navigate('Notification', { screen: 'NotificationSpecific', data: remoteMessage })
     }
   })
 
   messaging().getInitialNotification().then(remoteMessage => {
-    console.log(JSON.stringify(remoteMessage))
     if (remoteMessage !== null) {
       navigate('Notification', { screen: 'NotificationSpecific', data: remoteMessage })
     }

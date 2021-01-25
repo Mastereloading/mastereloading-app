@@ -1,7 +1,7 @@
 import React from 'react'
-import { Image } from 'react-native'
+import { Linking, Image } from 'react-native'
 import { connect } from 'react-redux'
-import { colors, Box, Text } from '../ui'
+import { colors, Box, Text, Button } from '../ui'
 
 const HomeScreen = (props) => {
   return (
@@ -13,11 +13,7 @@ const HomeScreen = (props) => {
           height: 200
         }}
       />
-      <Text
-        style={{
-          textAlign: 'center'
-        }}
-      >
+      <Text style={{ textAlign: 'center' }}>
         {props.welcomeMessage}
       </Text>
       <Text
@@ -29,6 +25,13 @@ const HomeScreen = (props) => {
       >
         (Altere o texto acima editando o exercício "Redux - React Input")
       </Text>
+      <Button
+      style={{
+        color: '#F00'
+      }}
+        value='aa'
+        onPress={() => Linking.openURL('mailto:guilherme-lamon@hotmail.com')} 
+      />
     </Box>
   )
 }
