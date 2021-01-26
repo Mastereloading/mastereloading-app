@@ -5,12 +5,14 @@ import { colors, Box, Text, Button } from '../ui'
 
 const HomeScreen = (props) => {
   return (
-    <Box flex background style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+    <Box flex background style={{ backgroundColor: colors.white, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
       <Image
         source={require('../assets/mastereloading.png')}
         style={{
           width: 200,
-          height: 200
+          height: 200,
+          borderWidth: 2,
+          borderColor: colors.tertiary
         }}
       />
       <Text style={{ textAlign: 'center' }}>
@@ -26,10 +28,7 @@ const HomeScreen = (props) => {
         (Altere o texto acima editando o exercício "Redux - React Input")
       </Text>
       <Button
-      style={{
-        color: '#F00'
-      }}
-        value='aa'
+        title='Email'
         onPress={() => Linking.openURL('mailto:guilherme-lamon@hotmail.com')} 
       />
     </Box>

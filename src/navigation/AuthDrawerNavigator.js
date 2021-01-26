@@ -2,6 +2,7 @@ import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import DrawerContentComponent from '../components/drawer/DrawerContentComponent'
 import HomeStackNavigator from './HomeStackNavigator'
+import MapsStackNavigator from './MapsStackNavigator'
 import ProfileStackNavigator from './ProfileStackNavigator'
 import ReduxStackNavigator from './ReduxStackNavigator'
 import NotificationStackNavigator from './NotificationStackNavigator'
@@ -25,6 +26,14 @@ const AuthDrawerNavigator = () => {
         options={{
           drawerLabel: 'Tela Principal',
           drawerIcon: () => <Icons.Store color={colors.primary} style={{ margin: 0, marginLeft: 15 }} />
+        }}
+      />
+      <Drawer.Screen
+        name='Maps'
+        component={MapsStackNavigator}
+        options={{
+          drawerLabel: 'Maps',
+          drawerIcon: () => <Icons.Map color={colors.primary} style={{ margin: 0, marginLeft: 15 }} />
         }}
       />
       <Drawer.Screen

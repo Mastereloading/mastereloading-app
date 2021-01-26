@@ -22,7 +22,7 @@ const Button = ({ title, color, fontSize, style, ...props }) => {
           fontWeight: 'bold',
           textAlign: 'center',
           fontSize: fontSize,
-          color: style.color || colors.primary,
+          color: style?.color || colors.primary,
         }}
       >
         {title}
