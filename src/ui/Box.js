@@ -4,7 +4,7 @@ import { colors } from './index'
 
 const Box = ({ children, style, onPress, flex, background, ...props }) => {
   const baseStyle = {
-    flex: flex ? 1 : style.flex || 0,
+    flex: flex ? 1 : style?.flex || 0,
     backgroundColor: background === true ? colors.white : background || 'transparent',
     flexDirection: style && style.flexDirection || 'column',
     justifyContent: style && style.justifyContent || 'flex-start',

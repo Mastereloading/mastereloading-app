@@ -10,6 +10,8 @@ target 'mastereloadingApp' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
   target 'mastereloadingAppTests' do
     inherit! :complete
     # Pods for testing

@@ -2,8 +2,8 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import * as changeNumberActions from '../store/actions/changeNumberActions'
-import { Box, Text, Button, colors } from '../ui'
+import * as changeNumberActions from '../../store/actions/changeNumberActions'
+import { Box, Text, Button, colors } from '../../ui'
 
 const ReduxCounterScreen = (props) => {
   return (
