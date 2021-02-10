@@ -3,8 +3,8 @@ import { View, Text } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import * as changeTextActions from '../store/actions/changeTextActions'
-import { Button, colors, TextInput } from '../ui'
+import * as changeTextActions from '../../store/actions/changeTextActions'
+import { Button, colors, TextInput } from '../../ui'
 
 const ReduxInputScreen = (props) => {
   const [textData, setTextData] = useState('')

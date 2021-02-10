@@ -5,7 +5,7 @@ import { Box, Text, colors } from '../ui'
 import LoginAccount from '../components/LoginAccount'
 import CreateAccount from '../components/CreateAccount'
 
-const SignScreen = () => {
+const SignInScreen = () => {
   const [LoginOrCreateAccount, setLoginOrCreateAccount] = useState(0)
 
   return (
@@ -48,4 +48,4 @@ const SignScreen = () => {
   )
 }
 
-export default SignScreen
+export default SignInScreen

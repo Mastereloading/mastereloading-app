@@ -1,11 +1,11 @@
 import React from 'react'
-import { colors, Box, Button } from '../ui'
+import { colors, Box, Button } from '../../ui'
 
-const ReactListScreen = ({ navigation }) => {
+const AnimationListScreen = ({ navigation }) => {
   return (
     <Box flex flexDirection='column'>
       <Button
-        title='React Counter - Teste 1'
+        title='Animação - Teste 1'
         style={{
           padding: 10,
           borderWidth: 2,
@@ -13,10 +13,10 @@ const ReactListScreen = ({ navigation }) => {
           color: colors.primary,
           borderColor: colors.tertiary
         }}
-        onPress={() => navigation.navigate('ReduxCounter')}
+        onPress={() => navigation.navigate('AnimationOne')}
       />
       <Button
-        title='React Input - Teste 2'
+        title='Animação - Teste 2'
         style={{
           padding: 10,
           borderWidth: 2,
@@ -24,10 +24,10 @@ const ReactListScreen = ({ navigation }) => {
           color: colors.primary,
           borderColor: colors.tertiary
         }}
-        onPress={() => navigation.navigate('ReduxInput')}
+        onPress={() => navigation.navigate('AnimationTwo')}
       />
       <Button
-        title='React - Teste 3'
+        title='Animação 3...'
         style={{
           padding: 10,
           borderWidth: 2,
@@ -35,10 +35,10 @@ const ReactListScreen = ({ navigation }) => {
           color: colors.primary,
           borderColor: colors.tertiary
         }}
-        onPress={() => alert('Teste 3 aqui...')}
+        onPress={() => alert('Animação 3 aqui...')}
       />
     </Box>
   )
 }
 
-export default ReactListScreen
+export default AnimationListScreen

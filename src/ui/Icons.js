@@ -15,6 +15,8 @@ const Info = ({ size, color, style, ...props }) => <Ionicons name="information-c
 const Notification = ({ size, color, style, ...props }) => <Ionicons name="notifications" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
 const Animation = ({ size, color, style, ...props }) => <Ionicons name="easel" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
 const Exit = ({ size, color, style, ...props }) => <Ionicons name="exit" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
+const Bluetooth = ({ size, color, style, ...props }) => <Ionicons name="bluetooth" size={size || 30} color={color || colors.white} style={[defaultStyle, style]} { ...props } />
+
 export default {
   Menu,
   Back,
@@ -24,5 +26,6 @@ export default {
   Info,
   Notification,
   Animation,
-  Exit
+  Exit,
+  Bluetooth
 }

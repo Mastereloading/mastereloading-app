@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Alert } from 'react-native'
 import MapView, { Marker } from 'react-native-maps'
 import { Box, Text, colors } from '../ui'
-// import { View, Text } from 'react-native'
 
 const HomeScreen = () => {
+  const [position, setPosition] = useState({
+    latitude: -23.78825,
+    longitude: -46.4324,
+    latitudeDelta: 0.200,
+    longitudeDelta: 0.200
+  })
+
   return (
     <Box flex>
       <MapView
+        region={position}
         key='AIzaSyDN6qbcIo1JMUrbpe3-XjMh9LAo_hiMhl4'
         showsUserLocation={true}
-        // stopPropagation={true}
-        // initialRegion={{
-        //   latitude: -23.6541319,
-        //   longitude: -46.5470885,
-        //   latitudeDelta: 0.0922,
-        //   longitudeDelta: 0.0421,
-        // }}
-        style={{ flex: 1 }}
+        stopPropagation={true}
+        initialRegion={{
+          latitude: -23.6541319,
+          longitude: -46.5470885,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+        style={{ width: '100%', height: '100%' }}
       >
         <Marker
           title='Santo André'
@@ -24,11 +32,8 @@ const HomeScreen = () => {
           rotation={25}
           isPreselected={true}
           coordinate={{ latitude: -23.6541319, longitude: -46.5470885 }}
-        >
-          <Box style={{ backgroundColor: "red", padding: 0 }}>
-            <Text>Santo André</Text>
-          </Box>
-        </Marker>
+          onPress={() => Alert.alert('Santo André')}
+        />
         <Marker
           title='Acra'
           description='Uma boa cidade?'
@@ -66,3 +71,20 @@ const HomeScreen = () => {
 }
 
 export default HomeScreen
+
+{/* <MapView
+style={styles.map}
+region={position}
+onPress={e =>
+  setPosition({
+    ...position,
+    latitude: e.nativeEvent.coordinate.latitude,
+    longitude: e.nativeEvent.coordinate.longitude,
+  })
+}>
+<Marker
+  coordinate={position}
+  title={'Marcador'}
+  description={'Testando o marcador no mapa'}
+/>
+</MapView>   */}
